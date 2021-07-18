@@ -11,5 +11,4 @@
    return names[Math.floor((r - 1) / copiesOfEachPerson) % peopleInLine];
  }
  */
-
 console.log(whoIsNext(["Sheldon", "Leonard", "Penny", "Rajesh", "Howard"], 52))
