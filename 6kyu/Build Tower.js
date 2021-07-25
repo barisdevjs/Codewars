@@ -6,5 +6,4 @@ function towerBuilder(floors){
   }
   return tower;
 }
-
-  console.log(towerBuilder(3))
+console.log(towerBuilder(3))
