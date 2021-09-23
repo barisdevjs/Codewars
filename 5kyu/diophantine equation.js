@@ -1,4 +1,4 @@
-const solequa = (num) => {
+/* const solequa = (num) => {
     const res = [];
     let a, b;
     for(let a = 1; a <= Math.sqrt(num); a++){
@@ -13,5 +13,16 @@ const solequa = (num) => {
     res
     return res;
  };
+ console.log(solequa(4)) */
 
- console.log(solequa(4))
+/*  const solequa = (n) => {
+   const res = [];
+   for (let x =n; x > 0; x--) {
+      let y = Math.sqrt((Math.pow(x,2) - n) / 4)
+      if ( Number.isInteger(y)) {
+         res.push([x,y])
+      }
+   }
+   return res
+}
+console.log(solequa(13)) */
