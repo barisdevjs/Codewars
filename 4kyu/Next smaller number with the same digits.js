@@ -1,29 +1,31 @@
 function nextSmaller(n) {
 const array = n.toString().split('').map((e) => Number(e));
-const sorted = array.sort((a,b) => a-b)
+array
+const sorted =[... array].sort((a,b) => a-b).map((e) => Number(e));
+sorted
 const sortCheck = (arr1,arr2) => {
-    return arr1.every((e,idx) =>  arr2[idx])
+    return arr1.every((e,idx) => arr1[idx] == arr2[idx])
 }
-if ( sortCheck(sorted,array) == true ) { return -1}
+const len = array.length
+if ( sortCheck(sorted,array) == true  ) { return -1 }
+if ( sortCheck(sorted,array) == false && len == 2 ) { return  Number(array.reverse().join(''))}
 
-let len = array.length
-var targetidx = -1;
-for (let i = len-1; i > 0; i--) {
-    if ( array[i] > array[i-1]) {
-        targetidx = i - 1 ;
-        break;
-    } 
+for (let i = array.length-1; i >= 0; i--) {
+    const lastElement = array[i];
+    const frontLastElement = array[i-1]
+    const thrid = array[i-2]
+    if ( lastElement < frontLastElement && lastElement != 0 ) {
+        array.fill(lastElement,i-1,i)
+        array.fill(frontLastElement,i)
+        return Number(array.join(''))
+    } else if (lastElement < frontLastElement && lastElement == 0 ) {
+        array.unshift(array[i+1])
+        array.pop()
+        array
+    }
 }
-
-if ( targetidx == -1) { return targetidx }
-let left = array.splice(0,targetidx)
-let old = [array[0]];
-let newer = array.sort((a,b) => a -b ).filter((e) => e > old)[0];
-left.push(newer)
-let idx = array.indexOf(newer)
-let right = array.splice(idx, 1)
-right.sort((a,b) => b-a )
-return Number(left.concat(array).join(''))
+return Number(array.join(''))
 }
-console.log(nextSmaller(2071))
-//console.log(nextSmaller(135))
+// console.log(nextSmaller(2071))
+console.log(nextSmaller(1027))
+console.log(nextSmaller(1234567908))
