@@ -17,6 +17,5 @@ function sumIntervals(intervals) {
     intervals.forEach(([start, end]) => {
       for (let i = start; i < end; i++) ranges.add(i);
     });
-    big
     return ranges.size;
   }
