@@ -38,7 +38,7 @@ function findReverseNumber(n) {
       first2 = '9'
       str = first2 + str.slice(2)
       result = str + str.slice(0,-1).split('').reverse().join('')
-    } else {
+    } else  {
       first2 = String(+first2 - 10)
       str = first2 + str.slice(2)
       result = str + str.slice(0,-1).split('').reverse().join('')
