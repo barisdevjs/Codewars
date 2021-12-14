@@ -11,5 +11,5 @@ for (let index = 1; index <= n; index++) {
 return multpler * (n+1) -1
 }
 
-    console.log(sumOfOddNumbers(42));
+console.log(sumOfOddNumbers(42));
 
