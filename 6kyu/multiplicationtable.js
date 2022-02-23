@@ -26,3 +26,7 @@ return result
   } */
 
 // console.log(multiplicationTable(4))
+
+/* multiplicationTable = function(size) {
+  return  Array.from({length: size}, (c,z) => Array.from({length: size}, (e, i) => (z +1) * (i + 1)));
+ } */
