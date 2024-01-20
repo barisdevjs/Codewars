@@ -1,12 +1,6 @@
 function convertFrac(lst){
-    const max = lst.flat(Infinity).reduce(lcm)
-    return lst.map(val => {
-        const subMax = Math.max(...val)
-        val.map(elem => {
-            elem
-            elem =( max / subMax) * elem 
-        })
-    })
+    const cd = lst.reduce((a, [_, d]) => lcm(d, a), 1);
+    return lst.map(([n, d]) => `(${(n * cd) / d},${cd})`).join("");
 }
 
 function gcd (a,b){
@@ -16,6 +10,5 @@ function gcd (a,b){
 function lcm (a,b){
     return ( a * b) / gcd(a, b)
 }
-
-
-console.log(convertFrac([ [1, 2], [1, 3], [1, 4] ]))
+// console.log(convertFrac([ [1, 2], [1, 3], [1, 4] ]))
+console.log(convertFrac([ [ 69, 130 ], [ 87, 1310 ], [ 3, 4 ] ]))
