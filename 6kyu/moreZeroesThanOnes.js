@@ -41,4 +41,11 @@ function moreZeros(s){
 
 }
 
+
+function moreZeros(s){
+    let arr = s.split('').map(c => c.charCodeAt(0)).map(n => n.toString(2)),
+        chars = arr.filter(s => s.split('0').length > s.split('1').length).map(s => parseInt(s, 2)),
+        uniq = new Set(chars);
+    return String.fromCharCode(...Array.from(uniq)).split('');
+  }
 console.log(moreZeros('DIGESTe'))
