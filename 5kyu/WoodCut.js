@@ -1,7 +1,10 @@
 function woodCut(woods, n, maxDivider =  0) {
     const total = woods.reduce((a, b) => a + b);
-    maxDivider = Math.floor(total / n);
+    if ( total < n) 0
+    if ( total === n) 1
 
+    maxDivider = Math.floor(total / n);
+    maxDivider 
 
     for (let i = maxDivider; i > 0; i--) {
         let sum = 0;
@@ -10,18 +13,22 @@ function woodCut(woods, n, maxDivider =  0) {
         }
         if (sum >= n) {
             return i;
+        } else {
+            maxDivider--
         }
     }
-    return 0;
-
+    return maxDivider
 }
-
-        
         
 // output woodCut([232, 124, 456], 7) === 114
 // output woodCut([232, 124, 456], 20) === 38
 // output woodCut([232, 124, 456], 1) === 456
 // output woodCut([232, 124, 456], 2) === 232
 // output woodCut([232, 124, 456], 3) === 228
-console.log(woodCut([232, 124, 456], 20));
-console.log(woodCut([200000000,2147483645,2147483646,2147483647], 4));
+// console.log(woodCut([232, 124, 456], 20));
+
+console.log(woodCut([232, 124, 456], 7));
+// console.log(woodCut([232, 124, 456], 20));
+// console.log(woodCut([232, 124, 456], 1));
+
+

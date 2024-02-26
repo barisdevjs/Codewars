@@ -2,7 +2,7 @@
 const checker = words.filter(e=>e.split('').sort().join('') ===
  word.split('').sort().join(''));
 return checker
-} */
+}  */
 
 ///////////////////////////////////
 
@@ -16,7 +16,7 @@ function anagrams(word, words) {
   });
 }
 
-console.log( anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer'])) */
+console.log( anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer']))
 ///////////////////////////////////
 
 /* function anagrams(word, words) {
@@ -30,11 +30,13 @@ console.log( anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer'])) 
 
 ///////////////////////////////////
 
-/* function anagrams(word, words) {
+function anagrams(word, words) {
   return words.filter(w => reorder(w) === reorder(word));
 }
 function reorder(word) {
   return word.split('').sort().join('');
-} */
+}
+console.log( anagrams('racer', ['crazer', 'carer', 'racar', 'caers', 'racer'])) 
+
 
 ///////////////////////////////////
